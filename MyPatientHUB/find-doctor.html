@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Doctor</title>
+
+    <link rel="stylesheet" href="find-doctor.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <button class="sidebar-close" id="sidebarClose">x</button>
+
+        <div class="logo">
+            <span class="logo-mark">M</span>
+            <span>MyPatientHUB</span>
+        </div>
+
+        <nav class="nav">
+
+            <a href="dashboard.html" class="link">
+                <span class="nav-icon">▣</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="link">
+                <span class="nav-icon">▤</span>
+                <span>Appointments</span>
+            </a>
+
+            <a href="find-doctor.html" class="link active">
+                <span class="nav-icon">♙</span>
+                <span>Find Doctor</span>
+            </a>
+
+            <a href="#" class="link">
+                <span class="nav-icon">▣</span>
+                <span>Find Clinic</span>
+            </a>
+
+            <a href="#" class="link">
+                <span class="nav-icon">▤</span>
+                <span>Chat</span>
+            </a>
+
+            <a href="#" class="link">
+                <span class="nav-icon">▦</span>
+                <span>Find Marketplace</span>
+            </a>
+
+            <a href="#" class="link">
+                <span class="nav-icon">🚀</span>
+                <span>Find Pharmacy</span>
+            </a>
+
+            <a href="#" class="link">
+                <span class="nav-icon">▤</span>
+                <span>My Dependents</span>
+            </a>
+
+            <a href="#" class="link">
+                <span class="nav-icon">⚒</span>
+                <span>My Account</span>
+            </a>
+
+            <a href="#" class="link">
+                <span class="nav-icon">⚒</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="help-box">
+            <span>?</span>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="doctor-main">
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="doctor-hero">
+
+
+            <!-- Header داخل Hero -->
+
+            <header class="doctor-header">
+
+                <div class="head-left">
+
+                    <div class="breadcrumb">
+                        <span>⌂</span>
+                        <span>/</span>
+                        <span>Searchdoctor</span>
+                    </div>
+
+                    <h2>Searchdoctor</h2>
+
+                </div>
+
+
+                <button class="menu-btn" id="menubtn">
+                    ☰
+                </button>
+
+
+                <div class="head-right">
+
+                    <div class="top-search">
+                        <span>⌕</span>
+                        <input type="text" placeholder="Type here...">
+                    </div>
+
+                    <a href="#" class="logout">
+                        ● Log out
+                    </a>
+
+                    <a href="#" class="head-icon">⚙</a>
+
+                    <a href="#" class="head-icon">♟</a>
+
+                </div>
+
+            </header>
+
+
+            <!-- Hero Content -->
+
+            <div class="hero-content">
+
+                <h1>Find a Doctor</h1>
+
+                <p>
+                    Search Doctors and schedule an appointment
+                </p>
+
+
+                <div class="doctor-search-form">
+
+                    <input
+                        type="text"
+                        placeholder="Search a doctor by name, specility"
+                    >
+
+                    <input
+                        type="text"
+                        placeholder="Zip Code or Neighborhood"
+                    >
+
+                    <button class="current-btn">
+                        CURRENT
+                    </button>
+                    <button class="doctor-search-btn">
+                        SEARCH
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SPECIAL SERVICES ================= -->
+
+        <section class="services-section">
+
+            <h2>Special Services</h2>
+
+            <div class="services-grid">
+
+                <article class="service-item">
+
+                    <div class="service-icon">♡</div>
+
+                    <div class="service-text">
+                        <h3>Primary Care and Internal MD</h3>
+
+                        <p>
+                            our Doctors Partner with you to help you
+                            to reach your wellness
+                        </p>
+                    </div>
+
+                    <span class="arrow">⌄</span>
+
+                </article>
+
+
+                <article class="service-item">
+
+                    <div class="service-icon">♧</div>
+
+                    <div class="service-text">
+                        <h3>Emergency Care</h3>
+
+                        <p>
+                            we provide emergency care for adults
+                            and children
+                        </p>
+                    </div>
+
+                    <span class="arrow">⌄</span>
+
+                </article>
+
+
+                <article class="service-item">
+
+                    <div class="service-icon">♡</div>
+
+                    <div class="service-text">
+                        <h3>Imaging Services</h3>
+
+                        <p>
+                            From Xray to MR scan we offer...
+                        </p>
+                    </div>
+
+                    <span class="arrow">⌄</span>
+
+                </article>
+
+
+                <article class="service-item">
+
+                    <div class="service-icon">✚</div>
+
+                    <div class="service-text">
+                        <h3>Urgent Care</h3>
+
+                        <p>
+                            we offer urgent care for none ...
+                        </p>
+                    </div>
+
+                    <span class="arrow">⌄</span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SPECIALTY ================= -->
+
+        <section class="specialty-section">
+
+            <h2>Find Doctors By Specialty</h2>
+
+            <p class="specialty-description">
+                Select a Specialty to View all Doctors and schedule an Appointment
+            </p>
+
+
+            <div class="specialty-grid">
+
+                <div class="specialty-item">
+                    <span>Anesthesiology</span>
+                    <span class="arrow">⌄</span>
+                </div>
+
+                <div class="specialty-item">
+                    <span>Dermatology</span>
+                    <span class="arrow">⌄</span>
+                </div>
+
+                <div class="specialty-item">
+                    <span>Emergency medicine</span>
+                    <span class="arrow">⌄</span>
+                </div>
+
+                <div class="specialty-item">
+                    <span>Neurology</span>
+                    <span class="arrow">⌄</span>
+                </div>
+
+                <div class="specialty-item">
+                    <span>Consultation</span>
+                    <span class="arrow">⌄</span>
+                </div>
+
+                <div class="specialty-item">
+                    <span>Ophthalmology</span>
+                    <span class="arrow">⌄</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026, made with ♥ by MyPiHUB for a better web.
+        </p>
+
+        <nav class="footer-links">
+            <a href="#">MyPatientHUB</a>
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+        </nav>
+
+    </footer>
+
+
+    <script src="find-doctor.js"></script>
+
+</body>
+
+</html>
