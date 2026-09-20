@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <link rel="stylesheet" href="clinic2.css">
+
+
+
+<link rel="stylesheet"  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"> </script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html><title>Find a Clinic - MyPatientHUB</title>
+
+<link rel="stylesheet" href="clinic2.css">
+<!-- =========================
+     SIDEBAR
+========================== -->
+<aside class="sidebar">
+
+    <!-- Logo -->
+    <div class="sidebar-logo">
+        <img src="images/logo.png" alt="MyPatientHUB Logo">
+        <span>MyPatientHUB</span>
+    </div>
+
+    <!-- Menu -->
+    <nav class="sidebar-menu">
+
+        <a href="dashboard.html">
+            <span class="icon">⌂</span>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="#">
+            <span class="icon">▣</span>
+            <span>Appointments</span>
+        </a>
+
+        <a href="#">
+            <span class="icon">♙</span>
+            <span>Find Doctor</span>
+        </a>
+
+        <a href="find-clinic.html" class="active">
+            <span class="icon">▣</span>
+            <span>Find Clinic</span>
+        </a>
+
+        <a href="#">
+            <span class="icon">▣</span>
+            <span>Chat</span>
+        </a>
+
+        <a href="#">
+            <span class="icon">▤</span>
+            <span>Find MarketPlace</span>
+        </a>
+
+        <a href="#">
+            <span class="icon">🚀</span>
+            <span>Find Pharmacy</span>
+        </a>
+
+        <a href="#">
+            <span class="icon">▣</span>
+            <span>My Dependents</span>
+        </a>
+
+        <a href="#">
+            <span class="icon">⚒️</span>
+            <span>My Account</span>
+        </a>
+
+        <a href="#">
+            <span class="icon">⚙️</span>
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+    <!-- Bottom App Card -->
+    <div class="app-card">
+
+        <div class="question-icon">?</div>
+
+        <h3>
+            Download<br>
+            MyPIHUB Mobile App
+        </h3>
+
+        <div class="app-buttons">
+            <button></button>
+            <button>▶️</button>
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================== -->
+<main class="clinic-section">
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <h1>Find a Clinic</h1>
+
+        <p>
+            Search Clinics and schedule an appointment with doctors through Clinic
+        </p>
+
+  <div class="search-boxes">
+
+  <input
+                type="text"
+                placeholder="Search"
+            >
+
+            <input
+                type="text"
+                placeholder="Zip Code or Neighborhood"
+            >
+
+            <button>Current</button>
+
+            <button>Search</button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Map / List buttons -->
+    <section class="view-section">
+
+        <button class="view-btn active">
+            🗺 Map
+        </button>
+
+        <button class="view-btn">
+            ☷ List
+        </button>
+
+    </section>
+
+
+    <!-- Filters + Map -->
+    <section class="clinic-content">
+
+        <!-- Filters -->
+        <div class="filters">
+
+            <input
+                type="text"
+                placeholder="Primary Care"
+            >
+
+            <input
+                type="text"
+                placeholder="Zip code or Neighborhood"
+            >
+
+            <h3>Filter By</h3>
+
+            <select>
+                <option>Specialty</option>
+            </select>
+
+            <select>
+                <option>Gender</option>
+            </select>
+
+            <select>
+                <option>Condition</option>
+            </select>
+
+            <select>
+                <option>Languages</option>
+            </select>
+
+ <h3>Providers Who Treat</h3>
+
+</div>
+
+
+<div class="map-type-buttons">
+    <button class="active">Map</button>
+    <button>Satellite</button>
+</div>
+
+<div id="clinic-map"></div>
+
+<script>
+    const map = L.map('clinic-map').setView([34.5553, 69.2075], 12);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+</script>
+
+</body>
+</html>

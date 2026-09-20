@@ -1,0 +1,269 @@
+
+{ box-sizing: border-box; 
+
+}
+
+
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f7f8fa; }
+
+
+/* SIDEBAR */
+.sidebar { width: 280px; height: 100vh;
+position: fixed;
+left: 0;
+top: 0;
+
+background: white;
+
+padding: 25px 20px;
+
+border-right: 1px solid #eeeeee;
+
+display: flex;
+flex-direction: column;
+
+overflow-y: auto;
+}
+/* LOGO */
+.sidebar-logo { height: 70px;
+display: flex;
+align-items: center;
+
+gap: 10px;
+
+padding-left: 15px;
+
+border-bottom: 1px solid #eeeeee;
+
+margin-bottom: 25px;
+}
+
+
+.sidebar-logo img { width: 40px; height: 40px;
+object-fit: contain;
+}
+
+
+.sidebar-logo span { font-size: 17px; font-weight: bold; color: #34446b; }
+/* MENU */
+
+
+.sidebar-menu { display: flex; flex-direction: column; gap: 8px; }
+.sidebar-menu a { height: 58px;
+display: flex;
+align-items: center;
+
+gap: 15px;
+
+padding: 0 15px;
+
+text-decoration: none;
+
+color: #71809d;
+
+font-size: 16px;
+
+border-radius: 12px;
+}
+
+
+.sidebar-menu a:hover { background: #f7f7f9; }
+.sidebar-menu a.active { background: white;
+color: #34446b;
+
+font-weight: bold;
+
+box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+.icon { width: 35px; height: 35px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: white;
+
+border-radius: 10px;
+
+box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
+
+flex-shrink: 0;
+}
+.active .icon { background: linear-gradient(135deg, #e5009d, #c500bb);
+color: white;
+
+box-shadow: none;
+}
+/* APP CARD */
+.app-card { margin-top: auto;
+min-height: 170px;
+
+padding: 18px;
+
+border-radius: 18px;
+
+color: white;
+
+background: linear-gradient(
+    135deg,
+    #e60096,
+    #a032dc
+);
+}
+.question-icon { width: 35px; height: 35px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: white;
+
+color: #d000b0;
+
+border-radius: 8px;
+
+font-size: 22px;
+
+margin-bottom: 15px;
+}
+.app-card h3 { margin: 0;
+font-size: 16px;
+
+line-height: 1.4;
+}
+.app-buttons { display: flex; gap: 10px;
+margin-top: 15px;
+}
+.app-buttons button { width: 85px; height: 35px;
+border: none;
+border-radius: 8px;
+
+background: white;
+
+color: #c900ae;
+
+font-size: 18px;
+}
+/* MAIN */
+.clinic-section {
+ margin-left: 280px;
+min-height: 100vh;
+
+padding: 30px;
+}
+
+
+/* HERO */
+.hero { min-height: 270px;
+border-radius: 15px;
+
+background: linear-gradient(
+    120deg,
+    #d000a8,
+    #7b00d4,
+    #3500d9
+);
+
+display: flex;
+flex-direction: column;
+
+align-items: center;
+justify-content: center;
+
+color: white;
+
+text-align: center;
+
+padding: 30px;
+}
+
+
+.hero h1 { margin: 0 0 10px;
+font-size: 36px;
+}
+
+
+.hero p { margin: 0 0 25px;
+font-size: 16px;
+font-weight: bold;
+}
+
+
+/* SEARCH */
+.search-boxes { display: flex;
+gap: 10px;
+
+align-items: center;
+}
+.search-boxes input { width: 230px;
+padding: 12px;
+
+border: none;
+
+border-radius: 8px;
+
+outline: none;
+}
+.search-boxes button { padding: 12px 25px;
+border: none;
+
+border-radius: 8px;
+
+background: white;
+
+color: #c500bb;
+
+cursor: pointer;
+}
+/* MAP / LIST */
+.view-section { display: flex;
+gap: 10px;
+
+margin: 20px 0;
+}
+.view-btn { padding: 10px 25px;
+border: none;
+
+border-radius: 8px;
+
+background: white;
+
+cursor: pointer;
+}
+.view-btn.active { background: #d000b0;
+color: white;
+}
+/* CONTENT */
+.clinic-content { display: flex;
+gap: 20px;
+}
+/* FILTER */
+.filters { width: 230px;
+flex-shrink: 0;
+}
+.filters input, .filters select { width: 100%;
+height: 42px;
+
+margin-bottom: 12px;
+
+padding: 0 10px;
+
+border: 1px solid #eeeeee;
+
+border-radius: 8px;
+
+background: white;
+
+outline: none;
+}
+.filters h3 { color: #555;
+font-size: 15px;
+
+margin: 15px 0 10px;
+}
+/* MAP */
+
+
+#clinic-map {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+}
