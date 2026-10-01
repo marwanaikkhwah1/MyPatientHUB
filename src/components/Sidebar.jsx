@@ -1,89 +1,84 @@
 import "./sidebar.css";
+function Sidebar() { return ( <aside className="sidebar">
+  {/* Logo */}
+  <div className="sidebar-logo">
+    <img src="/images/logo.png" alt="MyPatientHUB Logo" />
+    <span>MyPatientHUB</span>
+  </div>
 
-function Sidebar() {
-  return (
-    <aside className="sidebar">
+  {/* Menu */}
+  <nav className="sidebar-menu">
 
-      {/* Logo */}
-      <div className="sidebar-logo">
-        <img src="/images/logo.png" alt="MyPatientHUB Logo" />
-        <span>MyPatientHUB</span>
-      </div>
+    <a href="#">
+      <span className="icon">⌂</span>
+      <span>Dashboard</span>
+    </a>
 
-      {/* Menu */}
-      <nav className="sidebar-menu">
+    <a href="#">
+      <span className="icon">▣</span>
+      <span>Appointments</span>
+    </a>
 
-        <a href="#">
-          <span className="icon">⌂</span>
-          <span>Dashboard</span>
-        </a>
+    <a href="#">
+      <span className="icon">♙</span>
+      <span>Find Doctor</span>
+    </a>
 
-        <a href="#">
-          <span className="icon">▣</span>
-          <span>Appointments</span>
-        </a>
+    <a href="#">
+      <span className="icon">▣</span>
+      <span>Find Clinic</span>
+    </a>
 
-        <a href="#">
-          <span className="icon">♙</span>
-          <span>Find Doctor</span>
-        </a>
+    <a href="#">
+      <span className="icon">▣</span>
+      <span>Chat</span>
+    </a>
 
-        <a href="#" className="active">
-          <span className="icon">▣</span>
-          <span>Find Clinic</span>
-        </a>
+    {/* Marketplace */}
+    <a href="/marketplace">
+      <span className="icon">▤</span>
+      <span>Find MarketPlace</span>
+    </a>
 
-        <a href="#">
-          <span className="icon">▣</span>
-          <span>Chat</span>
-        </a>
+    <a href="#">
+      <span className="icon">🚀</span>
+      <span>Find Pharmacy</span>
+    </a>
 
-        <a href="#">
-          <span className="icon">▤</span>
-          <span>Find MarketPlace</span>
-        </a>
+    <a href="#">
+      <span className="icon">▣</span>
+      <span>My Dependents</span>
+    </a>
 
-        <a href="#">
-          <span className="icon">🚀</span>
-          <span>Find Pharmacy</span>
-        </a>
+    <a href="#">
+      <span className="icon">⚒️</span>
+      <span>My Account</span>
+    </a>
 
-        <a href="#">
-          <span className="icon">▣</span>
-          <span>My Dependents</span>
-        </a>
+    <a href="#">
+      <span className="icon">⚙️</span>
+      <span>Settings</span>
+    </a>
 
-        <a href="#">
-          <span className="icon">⚒️</span>
-          <span>My Account</span>
-        </a>
+  </nav>
 
-        <a href="#">
-          <span className="icon">⚙️</span>
-          <span>Settings</span>
-        </a>
+  {/* Bottom App Card */}
+  <div className="app-card">
 
-      </nav>
+    <div className="question-icon">?</div>
 
-      {/* Bottom App Card */}
-      <div className="app-card">
+    <h3>
+      Download<br />
+      MyPIHUB Mobile App
+    </h3>
 
-        <div className="question-icon">?</div>
+    <div className="app-buttons">
+      <button></button>
+      <button>▶️</button>
+    </div>
 
-        <h3>
-          Download<br />
-          MyPIHUB Mobile App
-        </h3>
+  </div>
 
-        <div className="app-buttons">
-          <button></button>
-          <button>▶️</button>
-        </div>
-
-      </div>
-
-    </aside>
-  );
-}
-
+</aside>
+); }
 export default Sidebar;
