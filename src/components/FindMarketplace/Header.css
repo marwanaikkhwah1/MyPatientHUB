@@ -1,136 +1,77 @@
 .marketplace-header {
-  width: 100%;
-  min-height: 120px;
-
+  position: static !important;
+  background: #f8f9fc79;
+  padding: 10px 25px;
+  height: 58px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-
-  padding: 30px 40px;
-
   box-sizing: border-box;
-
-  background: #f8f9fc;
+  border-radius: 10px;
 }
-
-/* LEFT */
 
 .header-left {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 2px;
 }
 
 .breadcrumb {
   display: flex;
   align-items: center;
-  gap: 10px;
-
-  color: #71809d;
-
+  gap: 5px;
   font-size: 15px;
-}
-
-.breadcrumb span:first-child {
-  font-size: 18px;
+  color: #6b7280;
+  padding-bottom: 20px;
 }
 
 .header-left h1 {
   margin: 0;
-
-  font-size: 24px;
-
-  color: #34446b;
+  font-size: 20px;
+  color: #1f2937;
 }
-
-/* MENU */
 
 .header-menu {
-  margin-left: 50px;
-
-  font-size: 26px;
-
-  color: #71809d;
+  font-size: 20px;
+  color: #4b5563;
+  cursor: pointer;
+  padding-left: 0px;
 }
-
-/* RIGHT */
 
 .header-right {
   display: flex;
   align-items: center;
-
-  gap: 18px;
+  gap: 5px;
 }
-
-/* SEARCH */
 
 .top-search {
-  width: 295px;
-  height: 55px;
-
   display: flex;
   align-items: center;
-
+  gap: 0px;
   background: white;
-
-  border: 1px solid #e5e7eb;
-
-  border-radius: 12px;
-
-  padding: 0 15px;
-
-  box-sizing: border-box;
-}
-
-.top-search span {
-  font-size: 25px;
-
-  color: #34446b;
+  border: 2px solid #5f6868;
+  border-radius: 10px;
+  /* padding: 5px 9px; */
+  width: 200px;
 }
 
 .top-search input {
-  width: 100%;
-
   border: none;
   outline: none;
-
-  padding-left: 10px;
-
-  font-size: 16px;
-
-  color: #34446b;
+  width: 120px;
+  font-size: 12px;
 }
-
-.top-search input::placeholder {
-  color: #aeb5c2;
-}
-
-/* LOGOUT */
 
 .logout-btn {
   border: none;
-
   background: transparent;
-
-  color: #34446b;
-
-  font-size: 16px;
-
-  font-weight: 600;
-
+  font-size: 12px;
   cursor: pointer;
 }
 
-/* ICONS */
-
 .header-icon {
   border: none;
-
   background: transparent;
-
-  color: #34446b;
-
-  font-size: 20px;
-
+  font-size: 16px;
   cursor: pointer;
 }

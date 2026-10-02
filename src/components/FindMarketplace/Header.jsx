@@ -8,6 +8,7 @@ function Header() { return ( <header className="marketplace-header">
     </div>
 
     <h1>Marketplace</h1>
+    
   </div>
 
   <div className="header-menu">
@@ -25,7 +26,7 @@ function Header() { return ( <header className="marketplace-header">
     </div>
 
     <button className="logout-btn">
-      ● Log out
+      👤Log out
     </button>
 
     <button className="header-icon">
@@ -33,7 +34,7 @@ function Header() { return ( <header className="marketplace-header">
     </button>
 
     <button className="header-icon">
-      🔔
+      <span style={{ color: "#6b7280" }}>🩶</span>
     </button>
 
   </div>
