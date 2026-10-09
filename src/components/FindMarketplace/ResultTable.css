@@ -1,0 +1,155 @@
+.results-table {
+  width: 100%;
+  margin-top: 35px;
+  padding: 25px 18px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+.results-table h2 {
+  margin: 0 0 25px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.entries-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #8b95a5;
+  font-size: 12px;
+}
+
+.entries-control select {
+  width: 145px;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid #e1e5ea;
+  border-radius: 6px;
+  background-color: white;
+  color: #7d8794;
+  outline: none;
+}
+
+.table-search {
+  width: 140px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid #e1e5ea;
+  border-radius: 6px;
+  outline: none;
+}
+
+.table-search::placeholder {
+  color: #b3bac4;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.results-table table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.results-table th {
+  padding: 12px 10px;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 500;
+  color: #a3acb9;
+  border-bottom: 1px solid #edf0f3;
+}
+
+.results-table td {
+  padding: 12px 10px;
+  font-size: 12px;
+  color: #596575;
+  border-bottom: 1px solid #edf0f3;
+}
+
+.name-cell,
+.service-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.food-thumbnail {
+  width: 44px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background-color: #dfe8d2;
+}
+
+.service-logo {
+  width: 45px;
+  min-width: 45px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7px;
+  border-radius: 2px;
+}
+
+.foodpanda {
+  background-color: #d70f64;
+  color: white;
+}
+
+.grab {
+  background-color: white;
+  color: #00a859;
+  font-weight: 600;
+}
+
+.deliveroo {
+  background-color: #d8e5e8;
+  color: #34495e;
+}
+
+.table-info {
+  margin: 25px 0 0;
+  font-size: 12px;
+  color: #8b95a5;
+}
+
+@media (max-width: 768px) {
+  .results-table {
+    padding: 20px 14px;
+    margin-top: 25px;
+  }
+
+  .table-controls {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .entries-control {
+    width: 100%;
+  }
+
+  .entries-control select {
+    flex: 1;
+  }
+
+  .table-search {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
