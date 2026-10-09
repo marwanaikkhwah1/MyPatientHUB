@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import DashboardCards from "../components/DashboardCards";
 import Footer from "../components/Footer";
 
-function Dashboard({ goToFindDoctor }) {
+function Dashboard({ goToFindDoctor , goToMyDependents}) {
 
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -36,6 +36,7 @@ function Dashboard({ goToFindDoctor }) {
                 onClose={handleSidebarClose}
                 activePage="dashboard"
                 goToFindDoctor={goToFindDoctor}
+                goToMyDependents={goToMyDependents}
             />
 
             <main className="main">
