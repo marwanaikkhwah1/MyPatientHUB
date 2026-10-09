@@ -4,7 +4,8 @@ function Sidebar({
     onClose,
     activePage,
     goToDashboard,
-    goToFindDoctor
+    goToFindDoctor,
+    goToMyDependents
 }) {
 
     function openDashboard(event) {
@@ -24,6 +25,17 @@ function Sidebar({
             goToFindDoctor();
         }
     }
+    function openMyDependents(event) {
+    event.preventDefault();
+
+    if (goToMyDependents) {
+        goToMyDependents();
+    }
+
+    if (onClose) {
+        onClose();
+    }
+}
 
     return (
         <aside
@@ -98,11 +110,18 @@ function Sidebar({
                     <span>Find Pharmacy</span>
                 </a>
 
-                <a href="#" className="link">
-                    <span className="nav-icon">▤</span>
-                    <span>My Dependents</span>
-                </a>
-
+<a
+    href="#"
+    className={
+        activePage === "dependents"
+            ? "link active"
+            : "link"
+    }
+    onClick={openMyDependents}
+>
+    <span className="nav-icon">▤</span>
+    <span>My Dependents</span>
+</a>
                 <a href="#" className="link">
                     <span className="nav-icon">⚒</span>
                     <span>My Account</span>
