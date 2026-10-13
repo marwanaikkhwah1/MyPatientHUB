@@ -1,10 +1,8 @@
-function Header({ onMenuClick }) {
+function Header({ onMenuClick, onLogout }) {
 
     function handleLogout(event) {
         event.preventDefault();
-
-        window.location.href =
-            "../Medical Clinic/clinic.html";
+        if (onLogout) onLogout();
     }
 
     return (

@@ -183,3 +183,5 @@
     width: 100%;
   }
 }
+/* Keep clinic hamburger appearance after making it a real button */
+.hero button.hero-menu { border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; padding: 0; }

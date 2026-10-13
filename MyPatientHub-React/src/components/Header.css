@@ -75,3 +75,5 @@
   font-size: 16px;
   cursor: pointer;
 }
+/* Accessible marketplace menu button; keeps existing appearance */
+.marketplace-header button.header-menu { border: 0; background: transparent; padding: 0; font: inherit; cursor: pointer; }

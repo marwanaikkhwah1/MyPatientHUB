@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Login.css";
 
-function Login() {
+function Login({onLoginSuccess}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -34,10 +34,11 @@ function Login() {
 
     if (isValid) {
   setSuccessMessage("Sign in successful!");
-
-  setTimeout(() => {
-    window.location.href = "/";
-  }, 500);
+setTimeout(() => {
+  if (onLoginSuccess) {
+    onLoginSuccess();
+  }
+}, 500);
 }
   }
 

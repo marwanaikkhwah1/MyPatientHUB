@@ -1,4 +1,4 @@
-function DoctorHero({ onMenuClick }) {
+function DoctorHero({ onMenuClick, onLogout }) {
 
     return (
         <section className="doctor-hero">
@@ -35,7 +35,7 @@ function DoctorHero({ onMenuClick }) {
                         />
                     </div>
 
-                    <a href="#" className="logout">
+                    <a href="#" className="logout" onClick={(event) => { event.preventDefault(); if (onLogout) onLogout(); }}>
                         ● Log out
                     </a>
 

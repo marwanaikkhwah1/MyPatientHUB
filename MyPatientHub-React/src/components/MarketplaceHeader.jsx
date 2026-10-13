@@ -1,5 +1,5 @@
 import "./Header.css";
-function Header() { return ( <header className="marketplace-header">
+function Header({ onLogout, onMenuClick }) { return ( <header className="marketplace-header">
   <div className="header-left">
     <div className="breadcrumb">
       <span>⌂</span>
@@ -11,9 +11,7 @@ function Header() { return ( <header className="marketplace-header">
     
   </div>
 
-  <div className="header-menu">
-    <span>☰</span>
-  </div>
+  <button type="button" className="header-menu" onClick={onMenuClick} aria-label="Open navigation">☰</button>
 
   <div className="header-right">
 
@@ -25,7 +23,7 @@ function Header() { return ( <header className="marketplace-header">
       />
     </div>
 
-    <button className="logout-btn">
+    <button type="button" className="logout-btn" onClick={onLogout}>
       👤Log out
     </button>
 

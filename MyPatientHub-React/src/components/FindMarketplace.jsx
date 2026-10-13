@@ -1,6 +1,7 @@
-import "./FindMarketplace.css"; import Header from "./Header"; import ProductCard from "./ProductCard";
+import "./FindMarketPlace.css"; import Header from "./MarketplaceHeader";
+import ResultTable from "./MarketplaceResults/ResultTable"; import ProductCard from "./ProductCard";
 const productImage = "/images/marketplace.png";
-function FindMarketplace() 
+function FindMarketplace({ onLogout, onMenuClick }) 
 { const products = [ { name: "Food Panda", price: "5 RM", 
 image: productImage, logo: "/images/foodpanda.png", 
 description: "As Uber works through a huge amount of internal management turmoil.", }, 
@@ -10,9 +11,9 @@ description: "Music is something that every person has his or her own taste in."
 { name: "Minimalist", price: "20 RM", image: productImage, description: "Different people have different tastes and preferences.", }, ];
 
 return ( <div className="marketplace-page"> 
-<Header />
+<Header onLogout={onLogout} onMenuClick={onMenuClick} />
   <section className="marketplace-container">
-    <h2>Search Marketplaces and order what you need</h2>``
+    <h2>Search Marketplaces and order what you need</h2>
     <div className="products-grid">
       {products.map((product) => (
         <ProductCard
@@ -22,6 +23,7 @@ return ( <div className="marketplace-page">
       ))}
     </div>
   </section>
+  <ResultTable />
 </div>
 ); }
 export default FindMarketplace;
