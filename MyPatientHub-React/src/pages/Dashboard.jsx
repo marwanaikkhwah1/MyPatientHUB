@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import DashboardCards from "../components/DashboardCards";
 import Footer from "../components/Footer";
 
-function Dashboard({ goToFindDoctor , goToMyDependents}) {
+function Dashboard({ goToLogin, ...navigation }) {
 
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -35,14 +35,15 @@ function Dashboard({ goToFindDoctor , goToMyDependents}) {
                 isMobileOpen={isMobileOpen}
                 onClose={handleSidebarClose}
                 activePage="dashboard"
-                goToFindDoctor={goToFindDoctor}
-                goToMyDependents={goToMyDependents}
+                {...navigation}
             />
 
             <main className="main">
 
                 <Header
                     onMenuClick={handleMenuClick}
+                    onLogout={goToLogin}
+                    onSettings={navigation.goToSettings}
                 />
 
                 <section className="welcome">

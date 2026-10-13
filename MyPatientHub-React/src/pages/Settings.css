@@ -1,0 +1,44 @@
+.mph-settings-page .mph-settings-card{background:#fff;border-radius:13px;box-shadow:0 7px 30px rgba(35,49,78,.055);margin-bottom:20px;padding:22px 25px;min-width:0;scroll-margin-top:20px}
+.mph-settings-page h2{font-size:17px;font-weight:600;margin:0 0 22px;color:#344767}
+.mph-settings-jump{display:flex;flex-direction:column;gap:17px;padding:23px 28px!important}
+.mph-settings-jump a{display:flex;align-items:center;gap:14px;text-decoration:none;color:#6e7b90;font-size:13px;width:fit-content}
+.mph-settings-jump a:hover{color:#c500a0}
+.mph-settings-jump a span{width:18px;color:#344767;font-size:17px}
+.mph-settings-profile{display:flex;align-items:center;gap:16px;min-height:100px}
+.mph-settings-avatar{width:62px;height:62px;border-radius:13px;background:linear-gradient(135deg,#526781,#c2c8d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:22px;flex-shrink:0}
+.mph-profile-name{display:flex;flex-direction:column;gap:6px;flex:1}
+.mph-profile-name strong{font-size:16px}.mph-profile-name>span{color:#7b8799;font-size:12px}
+.mph-visibility-toggle{display:flex;align-items:center;gap:12px;color:#66758a;font-size:12px;cursor:pointer}
+.mph-visibility-toggle input{position:absolute;opacity:0;width:1px;height:1px}
+.mph-switch{width:36px;height:20px;border-radius:12px;background:#d7dce5;position:relative;transition:.2s}
+.mph-switch:after{content:"";position:absolute;left:3px;top:3px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 3px #0003;transition:.2s}
+.mph-visibility-toggle input:checked+.mph-switch{background:#344767}
+.mph-visibility-toggle input:checked+.mph-switch:after{transform:translateX(16px)}
+.mph-visibility-toggle input:focus-visible+.mph-switch{outline:2px solid #b600a0;outline-offset:3px}
+.mph-settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}
+.mph-setting-field{display:flex;flex-direction:column;gap:8px;min-width:0;color:#344767;font-size:11px;font-weight:600}
+.mph-setting-field input,.mph-setting-field select{box-sizing:border-box;width:100%;min-width:0;min-height:39px;border:1px solid #e3e6ed;border-radius:7px;background:#fff;padding:9px 11px;color:#59667a;font-size:12px;font-weight:400;outline:0}
+.mph-setting-field input:focus,.mph-setting-field select:focus{border-color:#8495b4;box-shadow:0 0 0 2px #34476712}
+.mph-setting-field input::placeholder{color:#a8b0bf}
+.mph-birth-selects{display:grid;grid-template-columns:1.4fr .7fr 1fr;gap:10px}
+.mph-settings-form-actions{display:flex;justify-content:flex-end;margin-top:20px}
+.mph-primary-btn{background:#303456;color:white;border:0;border-radius:7px;padding:12px 24px;font-size:11px;font-weight:700;cursor:pointer;box-shadow:0 3px 6px #28345228}
+.mph-primary-btn:hover{background:#444a79}
+.mph-password-card>.mph-setting-field{margin-bottom:20px}
+.mph-password-bottom{display:flex;justify-content:space-between;gap:15px;align-items:flex-end;margin-top:42px}
+.mph-password-bottom h3{font-size:16px;margin:0 0 14px}.mph-password-bottom p,.mph-password-bottom li{font-size:12px;color:#78869b;line-height:1.7}.mph-password-bottom ul{padding-left:20px;margin:8px 0 0}
+.mph-settings-section-title{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.mph-demo-badge{background:#d9f8bd;color:#5c9b27;border-radius:5px;font-size:10px;padding:5px 8px;font-weight:700;white-space:nowrap}
+.mph-settings-security-row{display:grid;grid-template-columns:minmax(110px,1fr) minmax(120px,1fr) auto;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid #f0f2f6;color:#6f7d91;font-size:13px}
+.mph-settings-security-row:last-child{border:0}.mph-settings-security-row>span:nth-child(2){text-align:right}
+.mph-settings-security-row button,.mph-delete-actions button:not(.mph-danger-btn){background:white;border:1px solid #aeb8c6;border-radius:6px;color:#65738b;min-width:75px;padding:8px 14px;cursor:pointer;font-size:11px;font-weight:600}
+.mph-settings-sessions>p,.mph-delete-account>p{font-size:12px;color:#8b97a7;margin-top:-10px;margin-bottom:20px;line-height:1.6}
+.mph-settings-session{display:flex;align-items:center;gap:14px;padding:17px 4px;border-bottom:1px solid #f1f2f5;font-size:12px;color:#8c98a8}
+.mph-settings-session:last-child{border:0}.mph-session-device{font-size:23px;color:#a2adba}.mph-session-name{flex:1;color:#6f7d90}.mph-session-name small{display:block;margin-top:6px}.mph-session-region{font-size:11px}.mph-settings-session button{background:none;border:0;color:#37b5c6;cursor:pointer;font-size:11px}
+.mph-delete-actions{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.mph-delete-actions label{display:flex;align-items:center;gap:12px;font-size:12px;color:#667489;cursor:pointer}.mph-delete-actions label small{display:block;color:#9aa4b2;margin-top:3px}.mph-delete-actions>div{display:flex;gap:9px}
+.mph-delete-actions .mph-danger-btn{background:#e93748;border:0;border-radius:6px;color:#fff;font-size:11px;font-weight:700;padding:10px 18px;cursor:pointer}.mph-delete-actions .mph-danger-btn:disabled{opacity:.45;cursor:not-allowed}
+.mph-settings-notice{position:relative;padding:14px 44px 14px 15px;margin-bottom:18px;border:1px solid #dbe2ed;border-radius:8px;background:#eef4fa;color:#344767;font-size:13px;line-height:1.5}
+.mph-settings-notice button{position:absolute;right:10px;top:8px;border:0;background:none;cursor:pointer;font-size:20px}
+@media(max-width:768px){.mph-settings-page .mph-settings-card{padding:18px 15px;margin-bottom:14px}.mph-settings-grid{grid-template-columns:1fr;gap:14px}.mph-settings-profile{flex-wrap:wrap}.mph-visibility-toggle{margin-left:auto}.mph-password-bottom{flex-direction:column;align-items:stretch;margin-top:20px}.mph-password-bottom .mph-primary-btn{align-self:flex-end}.mph-settings-security-row{grid-template-columns:minmax(0,1fr) auto}.mph-settings-security-row>span:nth-child(2){grid-column:1;grid-row:2;text-align:left}.mph-settings-security-row button{grid-column:2;grid-row:1/span 2}.mph-settings-session{flex-wrap:wrap}.mph-delete-actions>div{margin-left:auto}}
+@media(max-width:410px){.mph-visibility-toggle{width:100%;justify-content:flex-end}.mph-birth-selects{grid-template-columns:1fr 65px 80px;gap:6px}.mph-settings-session{gap:8px}.mph-delete-actions>div{width:100%;justify-content:flex-end}.mph-delete-actions button{min-width:0!important;padding:9px!important}}

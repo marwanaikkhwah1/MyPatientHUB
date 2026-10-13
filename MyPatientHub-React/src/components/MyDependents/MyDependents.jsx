@@ -26,7 +26,7 @@ const plans = [
   },
 ];
 
-function MyDependents({ goToDashboard, goToFindDoctor }) {
+function MyDependents({ goToLogin, ...navigation }) {
   const [step, setStep] = useState(1);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -98,12 +98,12 @@ function MyDependents({ goToDashboard, goToFindDoctor }) {
         isMobileOpen={isMobileOpen}
         onClose={handleSidebarClose}
         activePage="dependents"
-        goToDashboard={goToDashboard}
-        goToFindDoctor={goToFindDoctor}
+        {...navigation}
       />
 
       <main className="main">
-        <Header onMenuClick={handleMenuClick} />
+        <Header onMenuClick={handleMenuClick} onLogout={goToLogin}
+                    onSettings={navigation.goToSettings} />
 
         <section className="dep-main">
           <div className="dep-intro">

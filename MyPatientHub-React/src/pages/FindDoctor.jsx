@@ -6,7 +6,7 @@ import SpecialServices from "../components/SpecialServices";
 import DoctorSpecialty from "../components/DoctorSpecialty";
 import Footer from "../components/Footer";
 
-function FindDoctor({ goToDashboard }) {
+function FindDoctor({ goToLogin, ...navigation }) {
 
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -37,13 +37,15 @@ function FindDoctor({ goToDashboard }) {
                 isMobileOpen={isMobileOpen}
                 onClose={handleSidebarClose}
                 activePage="doctor"
-                goToDashboard={goToDashboard}
+                {...navigation}
             />
 
             <main className="doctor-main">
 
                 <DoctorHero
                     onMenuClick={handleMenuClick}
+                    onLogout={goToLogin}
+                    onSettings={navigation.goToSettings}
                 />
 
                 <SpecialServices />

@@ -1,10 +1,8 @@
-function Header({ onMenuClick }) {
+function Header({ onMenuClick, onLogout, onSettings }) {
 
     function handleLogout(event) {
         event.preventDefault();
-
-        window.location.href =
-            "../Medical Clinic/clinic.html";
+        if (onLogout) onLogout();
     }
 
     return (
@@ -48,7 +46,7 @@ function Header({ onMenuClick }) {
                     ● Log out
                 </a>
 
-                <a href="#" className="head-icon">
+                <a href="#/settings" className="head-icon" onClick={(event) => { event.preventDefault(); onSettings?.(); }}>
                     ⚙
                 </a>
 
