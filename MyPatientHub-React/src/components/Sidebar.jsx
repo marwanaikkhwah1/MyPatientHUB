@@ -1,4 +1,3 @@
-
 function Sidebar({
   isCollapsed,
   isMobileOpen,
@@ -9,163 +8,56 @@ function Sidebar({
   goToFindClinic,
   goToMarketplace,
   goToMyDependents,
+  goToChat,
+  goToSettings,
 }) {
-  function openPage(event, navigate) {
+  const items = [
+    { label: "Dashboard", page: "dashboard", icon: "▣", action: goToDashboard },
+    { label: "Appointments", icon: "▤" },
+    { label: "Find Doctor", page: "doctor", icon: "♙", action: goToFindDoctor },
+    { label: "Find Clinic", page: "clinic", icon: "▣", action: goToFindClinic },
+    { label: "Chat", page: "chat", icon: "▤", action: goToChat },
+    { label: "Find Marketplace", page: "marketplace", icon: "▦", action: goToMarketplace },
+    { label: "Find Pharmacy", icon: "🚀" },
+    { label: "My Dependents", page: "dependents", icon: "▤", action: goToMyDependents },
+    { label: "My Account", page: "settings", icon: "⚒️", action: goToSettings },
+    { label: "Settings", page: "settings", icon: "⚙", action: goToSettings },
+  ];
+
+  function openPage(event, action) {
     event.preventDefault();
-
-    if (navigate) {
-      navigate();
-    }
-
-    if (onClose) {
-      onClose();
+    if (action) {
+      action();
+      onClose?.();
     }
   }
 
   return (
     <aside
-      className={`sidebar
-        ${isCollapsed ? "collapsed" : ""}
-        ${isMobileOpen ? "mobile-open" : ""}
-      `}
+      className={`sidebar ${isCollapsed ? "collapsed" : ""} ${isMobileOpen ? "mobile-open" : ""}`}
+      aria-label="Main navigation"
     >
-      <button
-        className="sidebar-close"
-        onClick={onClose}
-      >
-        x
-      </button>
-
+      <button type="button" className="sidebar-close" onClick={onClose} aria-label="Close navigation">×</button>
       <div className="logo">
         <span className="logo-mark">M</span>
         <span>MyPatientHUB</span>
       </div>
-
       <nav className="nav">
-        <a
-          href="#"
-          className={
-            activePage === "dashboard"
-              ? "link active"
-              : "link"
-          }
-          onClick={(event) =>
-            openPage(event, goToDashboard)
-          }
-        >
-          <span className="nav-icon">▣</span>
-          <span>Dashboard</span>
-        </a>
-
-        <a
-          href="#"
-          className="link"
-          onClick={(event) => event.preventDefault()}
-        >
-          <span className="nav-icon">▤</span>
-          <span>Appointments</span>
-        </a>
-
-        <a
-          href="#"
-          className={
-            activePage === "doctor"
-              ? "link active"
-              : "link"
-          }
-          onClick={(event) =>
-            openPage(event, goToFindDoctor)
-          }
-        >
-          <span className="nav-icon">♙</span>
-          <span>Find Doctor</span>
-        </a>
-
-        <a
-          href="#"
-          className={
-            activePage === "clinic"
-              ? "link active"
-              : "link"
-          }
-          onClick={(event) =>
-            openPage(event, goToFindClinic)
-          }
-        >
-          <span className="nav-icon">▣</span>
-          <span>Find Clinic</span>
-        </a>
-
-        <a
-          href="#"
-          className="link"
-          onClick={(event) => event.preventDefault()}
-        >
-          <span className="nav-icon">▤</span>
-          <span>Chat</span>
-        </a>
-
-        <a
-          href="#"
-          className={
-            activePage === "marketplace"
-              ? "link active"
-              : "link"
-          }
-          onClick={(event) =>
-            openPage(event, goToMarketplace)
-          }
-        >
-          <span className="nav-icon">▦</span>
-          <span>Find Marketplace</span>
-        </a>
-
-        <a
-          href="#"
-          className="link"
-          onClick={(event) => event.preventDefault()}
-        >
-          <span className="nav-icon">🚀</span>
-          <span>Find Pharmacy</span>
-        </a>
-
-        <a
-          href="#"
-          className={
-            activePage === "dependents"
-              ? "link active"
-              : "link"
-          }
-          onClick={(event) =>
-            openPage(event, goToMyDependents)
-          }
-        >
-          <span className="nav-icon">▤</span>
-          <span>My Dependents</span>
-        </a>
-
-        <a
-          href="#"
-          className="link"
-          onClick={(event) => event.preventDefault()}
-        >
-          <span className="nav-icon">⚒️</span>
-          <span>My Account</span>
-        </a>
-
-        <a
-          href="#"
-          className="link"
-          onClick={(event) => event.preventDefault()}
-        >
-          <span className="nav-icon">⚒️</span>
-          <span>Settings</span>
-        </a>
+        {items.map((item) => (
+          <a
+            key={item.label}
+            href={item.page ? `#/${item.page}` : "#"}
+            className={activePage === item.page && item.page && item.label !== "My Account" ? "link active" : "link"}
+            onClick={(event) => openPage(event, item.action)}
+            aria-current={activePage === item.page && item.page && item.label !== "My Account" ? "page" : undefined}
+            title={item.action ? item.label : `${item.label} (coming soon)`}
+          >
+            <span className="nav-icon" aria-hidden="true">{item.icon}</span>
+            <span>{item.label}</span>
+          </a>
+        ))}
       </nav>
-
-      <div className="help-box">
-        <span>?</span>
-      </div>
+      <div className="help-box"><span>?</span></div>
     </aside>
   );
 }

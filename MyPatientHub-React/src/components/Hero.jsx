@@ -1,6 +1,6 @@
 
 import "./Hero.css";
-function Hero({ onLoginClick, onMenuClick }) {
+function Hero({ onLoginClick, onMenuClick, onSettings }) {
   return (
     <section className="hero">
 
@@ -24,7 +24,7 @@ function Hero({ onLoginClick, onMenuClick }) {
           </div>
 
        <span onClick={onLoginClick} style={{ cursor: "pointer" }} role="button" tabIndex={0} onKeyDown={(event) => { if (event.key === "Enter") onLoginClick?.(); }}>◉ Log in</span>
-          <span className="top-icon">⚙</span>
+          <button type="button" className="top-icon" onClick={onSettings} aria-label="Settings">⚙</button>
           <span className="top-icon">●</span>
 
         </div>

@@ -43,6 +43,7 @@ function Dashboard({ goToLogin, ...navigation }) {
                 <Header
                     onMenuClick={handleMenuClick}
                     onLogout={goToLogin}
+                    onSettings={navigation.goToSettings}
                 />
 
                 <section className="welcome">

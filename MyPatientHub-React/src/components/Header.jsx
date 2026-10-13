@@ -1,4 +1,4 @@
-function Header({ onMenuClick, onLogout }) {
+function Header({ onMenuClick, onLogout, onSettings }) {
 
     function handleLogout(event) {
         event.preventDefault();
@@ -46,7 +46,7 @@ function Header({ onMenuClick, onLogout }) {
                     ● Log out
                 </a>
 
-                <a href="#" className="head-icon">
+                <a href="#/settings" className="head-icon" onClick={(event) => { event.preventDefault(); onSettings?.(); }}>
                     ⚙
                 </a>
 

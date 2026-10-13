@@ -6,7 +6,7 @@ import Filters from "../components/Filters";
 import ClinicMap from "../components/Clinicmap";
 import "./ClinicPage.css";
 
-function FindClinic({ goToDashboard, goToFindDoctor, goToFindClinic, goToMarketplace, goToMyDependents, goToLogin }) {
+function FindClinic({ goToLogin, goToSettings, ...navigation }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
@@ -20,13 +20,11 @@ function FindClinic({ goToDashboard, goToFindDoctor, goToFindClinic, goToMarketp
       <Sidebar
         isCollapsed={isCollapsed} isMobileOpen={isMobileOpen}
         onClose={() => setIsMobileOpen(false)} activePage="clinic"
-        goToDashboard={goToDashboard} goToFindDoctor={goToFindDoctor}
-        goToFindClinic={goToFindClinic} goToMarketplace={goToMarketplace}
-        goToMyDependents={goToMyDependents}
+        {...navigation} goToSettings={goToSettings}
       />
       <main className="main clinic-main">
         <button type="button" className="clinic-mobile-menu" onClick={toggleMenu}>☰ Menu</button>
-        <Hero onLoginClick={goToLogin} onMenuClick={toggleMenu} />
+        <Hero onLoginClick={goToLogin} onMenuClick={toggleMenu} onSettings={goToSettings} />
         <div className="clinic-content">
           <Filters />
           <div className="clinic-map-panel">

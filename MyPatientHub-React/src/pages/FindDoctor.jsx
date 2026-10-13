@@ -45,6 +45,7 @@ function FindDoctor({ goToLogin, ...navigation }) {
                 <DoctorHero
                     onMenuClick={handleMenuClick}
                     onLogout={goToLogin}
+                    onSettings={navigation.goToSettings}
                 />
 
                 <SpecialServices />

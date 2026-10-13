@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import FindMarketplace from "../components/FindMarketplace";
 
-function Marketplace({ goToDashboard, goToFindDoctor, goToFindClinic, goToMarketplace, goToMyDependents, goToLogin }) {
+function Marketplace({ goToLogin, goToSettings, ...navigation }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   function toggleMenu() {
@@ -15,12 +15,10 @@ function Marketplace({ goToDashboard, goToFindDoctor, goToFindClinic, goToMarket
       <Sidebar
         isCollapsed={isCollapsed} isMobileOpen={isMobileOpen}
         onClose={() => setIsMobileOpen(false)} activePage="marketplace"
-        goToDashboard={goToDashboard} goToFindDoctor={goToFindDoctor}
-        goToFindClinic={goToFindClinic} goToMarketplace={goToMarketplace}
-        goToMyDependents={goToMyDependents}
+        {...navigation} goToSettings={goToSettings}
       />
       <main className="main marketplace-main">
-        <FindMarketplace onLogout={goToLogin} onMenuClick={toggleMenu} />
+        <FindMarketplace onLogout={goToLogin} onMenuClick={toggleMenu} onSettings={goToSettings} />
       </main>
       <Footer />
     </div>

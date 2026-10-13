@@ -102,7 +102,8 @@ function MyDependents({ goToLogin, ...navigation }) {
       />
 
       <main className="main">
-        <Header onMenuClick={handleMenuClick} onLogout={goToLogin} />
+        <Header onMenuClick={handleMenuClick} onLogout={goToLogin}
+                    onSettings={navigation.goToSettings} />
 
         <section className="dep-main">
           <div className="dep-intro">
