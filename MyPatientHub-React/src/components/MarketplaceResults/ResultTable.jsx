@@ -1,4 +1,4 @@
-﻿
+
 import { useState } from "react";
 import "./ResultTable.css";
 
@@ -67,7 +67,7 @@ const products = [
   },
 ];
 
-function ResultsTable() {
+function ResultsTable({ externalSearch = "" }) {
   const [search, setSearch] = useState("");
   const [entries, setEntries] = useState(7);
 
@@ -83,7 +83,7 @@ function ResultsTable() {
       .join(" ")
       .toLowerCase();
 
-    return searchableText.includes(search.toLowerCase());
+    return searchableText.includes(search.toLowerCase()) && searchableText.includes(externalSearch.toLowerCase());
   });
 
   const visibleProducts = filteredProducts.slice(0, entries);

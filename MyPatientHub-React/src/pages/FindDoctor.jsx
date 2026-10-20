@@ -10,6 +10,8 @@ function FindDoctor({ goToLogin, ...navigation }) {
 
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [isMobileOpen, setIsMobileOpen] = useState(false);
+    const [doctorSearch, setDoctorSearch] = useState("");
+    const [doctorArea, setDoctorArea] = useState("");
 
     function handleMenuClick() {
 
@@ -46,11 +48,13 @@ function FindDoctor({ goToLogin, ...navigation }) {
                     onMenuClick={handleMenuClick}
                     onLogout={goToLogin}
                     onSettings={navigation.goToSettings}
+                    navigation={navigation}
+                    onSearch={(term, area) => { setDoctorSearch(term); setDoctorArea(area); }}
                 />
 
                 <SpecialServices />
 
-                <DoctorSpecialty />
+                <DoctorSpecialty search={doctorSearch} area={doctorArea} />
 
             </main>
 

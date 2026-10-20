@@ -6,11 +6,12 @@ import Marketplace from "./pages/Marketplace";
 import MyDependents from "./components/MyDependents/MyDependents";
 import Chat from "./pages/Chat";
 import Settings from "./pages/Settings";
+import FindPharmacy from "./pages/FindPharmacy";
 import Login from "./components/Login";
 import "./App.css";
 import "./find-doctor.css";
 
-const validPages = new Set(["login", "dashboard", "doctor", "clinic", "marketplace", "dependents", "chat", "settings"]);
+const validPages = new Set(["login", "dashboard", "doctor", "clinic", "marketplace", "pharmacy", "dependents", "chat", "settings"]);
 
 function pageFromHash() {
   const page = window.location.hash.replace(/^#\/?/, "").split("?")[0];
@@ -41,6 +42,7 @@ function App() {
     goToFindDoctor: () => navigate("doctor"),
     goToFindClinic: () => navigate("clinic"),
     goToMarketplace: () => navigate("marketplace"),
+    goToFindPharmacy: () => navigate("pharmacy"),
     goToMyDependents: () => navigate("dependents"),
     goToChat: () => navigate("chat"),
     goToSettings: () => navigate("settings"),
@@ -56,6 +58,8 @@ function App() {
       return <FindClinic {...navigation} />;
     case "marketplace":
       return <Marketplace {...navigation} />;
+    case "pharmacy":
+      return <FindPharmacy {...navigation} />;
     case "dependents":
       return <MyDependents {...navigation} />;
     case "chat":

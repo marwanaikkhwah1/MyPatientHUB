@@ -1,4 +1,5 @@
-function Header({ onMenuClick, onLogout, onSettings }) {
+import GlobalSearch from "./GlobalSearch";
+function Header({ onMenuClick, onLogout, onSettings, navigation }) {
 
     function handleLogout(event) {
         event.preventDefault();
@@ -29,14 +30,7 @@ function Header({ onMenuClick, onLogout, onSettings }) {
 
             <div className="head-right">
 
-                <div className="search">
-                    <span>⌕</span>
-
-                    <input
-                        type="text"
-                        placeholder="Type here..."
-                    />
-                </div>
+                <div className="search"><GlobalSearch navigation={navigation} /></div>
 
                 <a
                     href="#"

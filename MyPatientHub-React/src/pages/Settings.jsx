@@ -60,7 +60,7 @@ function Settings({ goToLogin, goToDashboard, goToSettings, ...navigation }) {
       <Sidebar isCollapsed={isCollapsed} isMobileOpen={isMobileOpen} onClose={() => setIsMobileOpen(false)} activePage="settings"
         {...navigation} goToDashboard={goToDashboard} goToSettings={goToSettings} />
       <main className="main mph-page-main">
-        <PatientPageHeader title="Accountsetting" onMenuClick={toggleMenu} onLogout={goToLogin} onSettings={goToSettings} onDashboard={goToDashboard} />
+        <PatientPageHeader title="Accountsetting" onMenuClick={toggleMenu} onLogout={goToLogin} onSettings={goToSettings} onDashboard={goToDashboard} navigation={{...navigation,goToDashboard,goToSettings}} />
         {notice && <div className="mph-settings-notice" role="status">{notice}<button type="button" onClick={() => setNotice("")} aria-label="Dismiss message">×</button></div>}
         <nav className="mph-settings-jump mph-settings-card" aria-label="Settings sections">
           {menuItems.map((item) => <a href={`#${item.id}`} key={item.id} onClick={(event) => { event.preventDefault(); document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth", block: "start" }); }}><span>{item.icon}</span>{item.label}</a>)}

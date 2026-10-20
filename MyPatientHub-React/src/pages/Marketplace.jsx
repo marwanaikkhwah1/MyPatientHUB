@@ -18,7 +18,7 @@ function Marketplace({ goToLogin, goToSettings, ...navigation }) {
         {...navigation} goToSettings={goToSettings}
       />
       <main className="main marketplace-main">
-        <FindMarketplace onLogout={goToLogin} onMenuClick={toggleMenu} onSettings={goToSettings} />
+        <FindMarketplace onLogout={goToLogin} onMenuClick={toggleMenu} onSettings={goToSettings} navigation={{...navigation,goToSettings}} />
       </main>
       <Footer />
     </div>

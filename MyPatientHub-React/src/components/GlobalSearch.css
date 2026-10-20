@@ -1,0 +1,5 @@
+.mph-global-search{display:flex;position:relative;align-items:center;gap:6px;min-width:0;width:100%;background:#fff;border:1px solid #e2e6ef;border-radius:8px;padding:7px 10px;color:#64748b;z-index:30}
+.mph-global-search input{min-width:0;width:100%;border:0!important;outline:0;background:transparent!important;font-size:12px;color:#344767;padding:3px!important;height:auto!important}
+.mph-global-results{position:absolute;z-index:100;top:calc(100% + 5px);left:0;min-width:100%;width:max-content;max-width:min(320px,85vw);border:1px solid #dce3eb;background:#fff;box-shadow:0 8px 22px #23334a20;border-radius:8px;padding:5px;max-height:275px;overflow:auto}
+.mph-global-results button{display:block;width:100%;text-align:left;padding:10px 12px;border:0;background:#fff;border-radius:5px;color:#344767;cursor:pointer;font-size:13px}
+.mph-global-results button:hover,.mph-global-results button:focus{background:#eef3fa}.mph-global-empty{padding:10px;font-size:12px;color:#6f7c90}

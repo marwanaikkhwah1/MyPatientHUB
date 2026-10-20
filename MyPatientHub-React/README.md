@@ -228,3 +228,12 @@ Detailed project documentation will be prepared separately.
 ---
 
 **MyPatientHUB — Team Healthcare Web Application**
+
+
+## Review changes (20 October 2026)
+- Added a searchable **Find Pharmacy** demonstration page and connected it to the sidebar.
+- Enabled searches across application sections, demo doctor specialties, clinics, marketplace products and dashboard cards.
+- Replaced fixed dashboard chart colors with React-state-driven sample charts, refreshing every 15 seconds. **Not connected to a live health API.**
+- Corrected missing marketplace logos and tightened responsive spacing.
+- Removed unused starter assets and an identical duplicate component; original development history remains in Git.
+- Features including payment, actual doctor appointments, live chat, and real-time records require backend services.

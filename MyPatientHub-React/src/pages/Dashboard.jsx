@@ -8,6 +8,7 @@ function Dashboard({ goToLogin, ...navigation }) {
 
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [isMobileOpen, setIsMobileOpen] = useState(false);
+    const [chartSearch,setChartSearch]=useState("");
 
     function handleMenuClick() {
 
@@ -44,13 +45,15 @@ function Dashboard({ goToLogin, ...navigation }) {
                     onMenuClick={handleMenuClick}
                     onLogout={goToLogin}
                     onSettings={navigation.goToSettings}
+                    navigation={navigation}
                 />
 
                 <section className="welcome">
                     <h2>Welcome To MyPatientHUB!</h2>
                 </section>
 
-                <DashboardCards />
+                <label className="mph-dashboard-search">Filter dashboard statistics <input type="search" value={chartSearch} onChange={e=>setChartSearch(e.target.value)} placeholder="Search clinics, health, pharmacy..." /></label>
+                <DashboardCards search={chartSearch} />
 
             </main>
 

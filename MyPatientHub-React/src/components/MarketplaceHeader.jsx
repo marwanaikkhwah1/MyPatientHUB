@@ -1,5 +1,6 @@
+import GlobalSearch from "./GlobalSearch";
 import "./Header.css";
-function Header({ onLogout, onMenuClick, onSettings }) { return ( <header className="marketplace-header">
+function Header({ onLogout, onMenuClick, onSettings, navigation }) { return ( <header className="marketplace-header">
   <div className="header-left">
     <div className="breadcrumb">
       <span>⌂</span>
@@ -15,13 +16,7 @@ function Header({ onLogout, onMenuClick, onSettings }) { return ( <header classN
 
   <div className="header-right">
 
-    <div className="top-search">
-      <span>⌕</span>
-      <input
-        type="search"
-        placeholder="Type here..."
-      />
-    </div>
+    <div className="top-search"><GlobalSearch navigation={navigation} /></div>
 
     <button type="button" className="logout-btn" onClick={onLogout}>
       👤Log out

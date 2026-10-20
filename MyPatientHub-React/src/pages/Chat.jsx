@@ -54,7 +54,7 @@ function Chat({ goToLogin, goToSettings, goToDashboard, ...navigation }) {
       <Sidebar isCollapsed={isCollapsed} isMobileOpen={isMobileOpen} onClose={() => setIsMobileOpen(false)} activePage="chat"
         {...navigation} goToDashboard={goToDashboard} goToSettings={goToSettings} />
       <main className="main mph-page-main">
-        <PatientPageHeader title="Chat" onMenuClick={toggleMenu} onLogout={goToLogin} onSettings={goToSettings} onDashboard={goToDashboard} />
+        <PatientPageHeader title="Chat" onMenuClick={toggleMenu} onLogout={goToLogin} onSettings={goToSettings} onDashboard={goToDashboard} navigation={{...navigation,goToDashboard,goToSettings}} />
         <section className={`mph-chat-card ${mobileConversation ? "mph-chat-show-thread" : ""}`} aria-label="Chat interface">
           <aside className="mph-chat-contacts">
             <div className="mph-chat-me">

@@ -1,4 +1,9 @@
-function DoctorHero({ onMenuClick, onLogout, onSettings }) {
+import { useState } from "react";
+import GlobalSearch from "./GlobalSearch";
+function DoctorHero({ onMenuClick, onLogout, onSettings, navigation, onSearch }) {
+    const [keyword, setKeyword] = useState("");
+    const [location, setLocation] = useState("");
+    function submit(event) { event.preventDefault(); onSearch?.(keyword, location); }
 
     return (
         <section className="doctor-hero">
@@ -26,14 +31,7 @@ function DoctorHero({ onMenuClick, onLogout, onSettings }) {
 
                 <div className="head-right">
 
-                    <div className="top-search">
-                        <span>⌕</span>
-
-                        <input
-                            type="text"
-                            placeholder="Type here..."
-                        />
-                    </div>
+                    <div className="top-search"><GlobalSearch navigation={navigation} /></div>
 
                     <a href="#" className="logout" onClick={(event) => { event.preventDefault(); if (onLogout) onLogout(); }}>
                         ● Log out
@@ -59,27 +57,27 @@ function DoctorHero({ onMenuClick, onLogout, onSettings }) {
                     Search Doctors and schedule an appointment
                 </p>
 
-                <div className="doctor-search-form">
+                <form className="doctor-search-form" onSubmit={submit}>
 
                     <input
                         type="text"
-                        placeholder="Search a doctor by name, specility"
+                        placeholder="Search by doctor or specialty" value={keyword} onChange={(event) => setKeyword(event.target.value)}
                     />
 
                     <input
                         type="text"
-                        placeholder="Zip Code or Neighborhood"
+                        placeholder="Area (demo)" value={location} onChange={(event) => setLocation(event.target.value)}
                     />
 
-                    <button className="current-btn">
-                        CURRENT
+                    <button type="button" className="current-btn" onClick={() => { setLocation("Any area"); onSearch?.(keyword, ""); }}>
+                        ANY AREA
                     </button>
 
-                    <button className="doctor-search-btn">
+                    <button type="submit" className="doctor-search-btn">
                         SEARCH
                     </button>
 
-                </div>
+                </form>
 
             </div>
 

@@ -12,3 +12,5 @@
 .clinic-page .clinic-mobile-menu { display: none; }
 @media (max-width: 950px) { .clinic-page .clinic-content { flex-direction: column; } .clinic-page .filters { width: 100%; flex-basis: auto; } .clinic-page .clinic-map-panel { width: 100%; } }
 @media (max-width: 768px) { .clinic-page .clinic-mobile-menu { display: inline-block; margin: 0 0 10px; border: 0; padding: 10px; border-radius: 8px; } .clinic-page .clinic-content { gap: 12px; } .clinic-page #clinic-map { height: 360px; } }
+
+.clinic-page .clinic-content{margin-top:14px}.clinic-page .filters select{max-width:100%}.clinic-page .filters label{font-size:13px}.clinic-page .filters label input[type="checkbox"]{width:auto;height:auto;margin:0}

@@ -754,3 +754,159 @@ gap: 20px;
     color: #344767; font-size: 22px; cursor: pointer; z-index: 2;
   }
 }
+
+/* Instructor review: compact, responsive layout shared across pages */
+html,body,#root{margin:0;min-width:0;max-width:100%;overflow-x:hidden}
+.app,.doctor-app{min-width:0;max-width:100%;grid-template-rows:auto 1fr auto}
+.main,.doctor-main,.mph-page-main{min-width:0;max-width:100%;overflow:visible}
+.sidebar{grid-row:1 / -1}
+.marketplace-page{min-height:0!important;padding-bottom:12px}
+.marketplace-container{margin:14px 0 18px!important}
+.results-table{margin-top:12px!important}
+.marketplace-main{padding-bottom:12px}
+.products-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,185px),1fr))!important;gap:18px}
+.mph-global-search{min-width:0}
+.mph-live-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 3px 15px;color:#344767}
+.mph-live-controls small{display:block;color:#7a8696;font-size:11px;margin-top:5px}
+.mph-live-controls button,.mph-reset-filters{background:#344767;color:#fff;border:0;border-radius:7px;padding:9px 13px;cursor:pointer}
+.mph-chart-details{font-size:12px;line-height:1.6;color:#65748a;padding:12px 3px}
+.mph-no-results{padding:14px;color:#7c8799;font-size:13px}
+.mph-market-filter,.mph-dashboard-search{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:10px 0 18px;color:#344767;font-size:13px}
+.mph-market-filter input,.mph-dashboard-search input{width:min(100%,360px);border:1px solid #dfe3eb;border-radius:8px;padding:10px;font-size:13px;min-width:0}
+.mph-provider-badge{display:inline-flex;align-items:center;background:#f9e3f0;border-radius:5px;padding:5px 7px;font-size:10px;color:#a32274;margin-right:8px;vertical-align:middle}
+.mph-card-demo-notice{display:block;padding:8px 0;color:#8e5f85;font-size:11px}
+.mph-clinic-results{margin-top:18px;color:#344767;font-size:13px}
+.mph-clinic-results p{margin:9px 0;color:#75839a}
+.mph-clinic-result{display:flex;flex-wrap:wrap;justify-content:space-between;gap:7px;padding:12px 0;border-bottom:1px solid #e9edf4}
+.mph-clinic-result span{color:#6f7c90}
+.clinic-page .filters label{flex-wrap:wrap}
+@media(max-width:1100px){.cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}}
+@media(max-width:768px){.app,.doctor-app{display:block!important;min-height:100dvh}.main,.doctor-main,.mph-page-main{width:100%;padding:12px!important}.marketplace-container{padding:16px!important}.footer{margin-top:6px}.head,.doctor-header{min-width:0}.cards{grid-template-columns:1fr}.card-body{flex-wrap:wrap}.chart{margin:auto}.mph-live-controls{align-items:flex-start}.products-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr))!important}}
+@media(max-width:410px){.products-grid{grid-template-columns:1fr!important}.table-controls{flex-wrap:wrap}.mph-settings-card{padding:14px!important}}
+
+
+/* ================================================================
+   FIX: CONTENT-SIZED LAYOUT + FOOTER (ALL AUTHENTICATED PAGES)
+   Prevent a middle 1fr row and 100vh sidebar from creating blank pages.
+   ================================================================ */
+.app,
+.doctor-app {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  grid-template-rows: max-content max-content;
+  align-content: start;
+  min-height: 0;
+  height: auto;
+}
+.app.sidebar-collapsed,
+.doctor-app.sidebar-collapsed {
+  grid-template-columns: 80px minmax(0, 1fr);
+}
+.app > .sidebar,
+.doctor-app > .sidebar {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  align-self: stretch;
+  height: auto;
+  min-height: 0;
+}
+.app > .main,
+.doctor-app > .doctor-main {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  height: auto;
+  min-height: 0;
+  padding-bottom: 16px;
+}
+.app > footer.footer,
+.doctor-app > footer.footer {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0 !important;
+  padding: 13px 20px;
+  min-height: 0;
+  height: auto;
+  align-self: start;
+  border-top: 1px solid #e8ebef;
+  background: transparent;
+}
+.marketplace-page {
+  min-height: 0 !important;
+}
+.dep-main {
+  padding-bottom: 24px;
+}
+.mph-charts-section {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.mph-chart-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.mph-animated-donut {
+  /* The circular sweep itself is driven by requestAnimationFrame in React. */
+  background-color: #e6e9ef;
+}
+
+/* Gentle mouse-over emphasis; transforms do not change chart layout. */
+.mph-animated-donut {
+  transform-origin: center;
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+.mph-animated-donut:hover {
+  transform: scale(1.07);
+  box-shadow: 0 7px 22px rgba(35, 62, 105, 0.23);
+  z-index: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mph-animated-donut { transition: none; }
+}
+@media (max-width: 768px) {
+  .app,
+  .doctor-app,
+  .app.sidebar-collapsed,
+  .doctor-app.sidebar-collapsed {
+    display: flex !important;
+    flex-direction: column;
+    align-content: normal;
+    min-height: 0;
+    height: auto;
+  }
+  .app > .sidebar,
+  .doctor-app > .sidebar {
+    display: none;
+  }
+  .app > .sidebar.mobile-open,
+  .doctor-app > .sidebar.mobile-open {
+    display: flex;
+    height: 100dvh;
+    min-height: 0;
+    overflow-y: auto;
+  }
+  .app > .main,
+  .doctor-app > .doctor-main {
+    width: 100%;
+    padding-bottom: 12px;
+  }
+  .app > footer.footer,
+  .doctor-app > footer.footer {
+    width: 100%;
+    padding: 13px 12px;
+  }
+  .mph-chart-actions { width: 100%; }
+}
+/* Lift the entire dashboard chart card */
+.mph-charts-section .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.mph-charts-section .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+}
